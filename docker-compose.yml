@@ -24,7 +24,16 @@ services:
       - postgres
       - backend
 
-  
+  nginx:
+    build:
+      context: ./nginx
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
 
 volumes:
   postgres-gces:
