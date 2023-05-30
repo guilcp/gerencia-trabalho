@@ -13,7 +13,6 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Build the stack
+        working-directory: /home/runner/work/gerencia-trabalho
         run: docker-compose up -d
