@@ -13,5 +13,5 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
-      - name: ls
-        run: ls
+      - name: start docker
+        run: docker-compose -f docker-compose.yml up --build --detach
