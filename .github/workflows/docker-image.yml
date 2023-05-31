@@ -8,10 +8,10 @@ on:
 
 jobs:
 
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
       - name: start docker
-        run: docker-compose -f docker-compose.yml up --build --detach
+        run: docker-compose up -d
