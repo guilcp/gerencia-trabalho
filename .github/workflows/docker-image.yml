@@ -24,5 +24,6 @@ jobs:
         run: |
           cd library_front
           ls
+          npm ci
           npm run build 
           npm test
