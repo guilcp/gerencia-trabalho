@@ -25,9 +25,7 @@ services:
       - backend
 
   nginx:
-    build:
-      context: ./nginx
-    image: nginx
+    build: nginx
     ports:
       - 80:80
     volumes:
