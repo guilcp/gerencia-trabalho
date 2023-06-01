@@ -19,4 +19,4 @@ jobs:
       - name: testa front 
         run: docker exec gerencia-trabalho_frontend_1 sh -c "CI=false npm run test"
       - name: testa back
-        run: docker exec gerencia-trabalho_backend_1 sh -c "pyhton3 manane.py test"
+        run: docker exec gerencia-trabalho_backend_1 sh -c "python3 manane.py test"
