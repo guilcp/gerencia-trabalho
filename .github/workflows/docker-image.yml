@@ -15,15 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: start docker
-        run: docker-compose up -d
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: cd 
-        run: |
-          cd library_front
-          ls
-          npm install
-          CI=false npm run build 
-          npm test
+        run: docker-compose up -d    
+      - name: testa front 
+        run: docker exec frontend sh -c "CI=false npm run test"
+      - name: testa back
+        run: docker exec backend sh -c "pyhton3 manane.py test"
